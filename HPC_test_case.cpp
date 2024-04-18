@@ -23,9 +23,9 @@ int main()
         for (int j = 0; j < t; j++)
         {
             if (rand() % m ==0)
-                fout << rand() % ((m*(int)cbrt(s) + 1)) << " ";
+                fout << 1 + rand() % (((int)cbrt(m*s) + 1)) << " ";
             else
-                fout << rand() % (int(cbrt(s)) + 1)<<" ";
+                fout << 1 + rand() % (int(cbrt(s)) + 1)<<" ";
         }
         fout << endl;
     }
