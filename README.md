@@ -1,9 +1,9 @@
-## P4- Task Scheduling in Edge Server Systems with limited Solar Energy and Infinite Batteries
-Achintya Gupta- 210101005
-Kannan Rustagi- 210101054
-Kshitij Maurya- 210101059
+# P4- Task Scheduling in Edge Server Systems with limited Solar Energy and Infinite Batteries
+Achintya Gupta- 210101005 <br>
+Kannan Rustagi- 210101054 <br>
+Kshitij Maurya- 210101059<br>
 
-# How to run the program?
+## How to run the program?
 
 1. To generate test cases, compile and run the generate_test_case.cpp file-
     g++ generate_test_case.cpp -o testcase
