@@ -138,8 +138,10 @@ int main()
 
         for (auto i : Current_Machines)
         {
-            int E_Available = i.second.first;
             int t = i.first, m = i.second.second;
+            int E_Available = Pref_S[m][t] - Prev_Pref_Used[m][t];
+            if (t)
+                E_Available -= Curr_Extra_Pref_Used[m][t - 1];
             // If tasks are left to be scheduled, try to schedule here
             if (D_New[t])
             {
@@ -219,8 +221,8 @@ int main()
         for (int m = 0; m < N; m++)
         {
             total_tasks += D[m][t];
-            tasks_at_t[t] += D[m][t];
-            tasks_at_m[m] += D[m][t];
+            tasks_at_t[t] += D_Sched[m][t];
+            tasks_at_m[m] += D_Sched[m][t];
         }
     }
 
