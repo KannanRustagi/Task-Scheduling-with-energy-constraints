@@ -27,18 +27,19 @@ Tasks received at each slot at each machine:
 
 Tasks scheduled at each slot at each machine:
 
-4 4 4 4 4 4 4 4 4 3 
-2 4 4 4 4 4 4 4 4 4 
-3 3 4 4 4 4 4 4 4 4 
-3 3 3 3 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 
-3 4 4 4 4 4 4 4 4 4 
-2 4 4 4 4 4 4 4 4 4 
-3 4 4 4 4 4 4 4 4 4 
-4 4 4 4 4 4 4 4 4 4 
-2 4 4 4 4 4 4 4 4 4 
+4 4 4 5 4 3 4 3 4 4 
+2 4 4 4 3 4 4 5 4 3 
+4 3 3 4 3 3 3 3 3 3 
+3 3 2 2 4 4 5 4 3 4 
+4 3 4 4 3 3 3 5 4 4 
+3 4 5 4 4 4 4 4 4 3 
+2 4 3 4 4 4 4 4 4 3 
+3 4 4 5 4 4 4 4 3 3 
+4 3 4 4 4 3 3 4 3 4 
+2 4 3 4 4 4 4 5 4 4 
 
-
+#########################################################################################
+ANALYSIS OF THE OUTPUT GENERATED: 
 
 Energy received at ith time slot:
 
@@ -50,11 +51,11 @@ Energy received at ith machine:
 
 Tasks scheduled at ith time slot:
 
-47 49 49 44 48 43 48 47 56 39 
+31 36 36 40 37 36 38 41 36 35 
 
 Tasks scheduled at ith machine:
 
-49 55 40 48 47 40 46 50 43 52 
+39 37 32 34 37 39 36 38 36 38 
 
 Total tasks receieved: 470
-Total tasks completed: 385
+Total tasks completed: 366
