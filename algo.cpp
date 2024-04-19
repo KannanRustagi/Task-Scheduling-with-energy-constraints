@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int cube(int x)
 {
     return (x * x * x);
 }
-void show(vector<vector<int>> &V, ofstream& fileStream)
+void show(vector<vector<int>> &V, ofstream &fileStream)
 {
     for (auto i : V)
     {
@@ -166,79 +165,93 @@ int main()
         Machine_Available = Machine_Available_Next;
     }
 
-    fout<<"Power received at each slot at each machine:"<<endl;
-    fout<<endl;
+    fout << "Power received at each slot at each machine:" << endl;
+    fout << endl;
     show(S, fout);
     fout << endl;
     fout << endl;
-    fout<<"Tasks received at each slot at each machine:"<<endl;
+    fout << "Tasks received at each slot at each machine:" << endl;
     fout << endl;
     show(D, fout);
     cout << endl;
     fout << endl;
-    fout<<"Tasks scheduled at each slot at each machine:"<<endl;
+    fout << "Tasks scheduled at each slot at each machine:" << endl;
     fout << endl;
     show(D_Sched, fout);
     fout << endl;
-    fout << endl;
+    fout << "#########################################################################################" << endl;
 
-    vector<int>energy_at_t(T);
-    vector<int>energy_at_m(N);
+    vector<int> energy_at_t(T);
+    vector<int> energy_at_m(N);
 
-    for(int t=0; t<T; t++){
-        for(int m=0; m<N; m++){
-            energy_at_t[t]+=S[m][t];
-            energy_at_m[m]+=S[m][t];
+    for (int t = 0; t < T; t++)
+    {
+        for (int m = 0; m < N; m++)
+        {
+            energy_at_t[t] += S[m][t];
+            energy_at_m[m] += S[m][t];
         }
     }
-
-    fout<<endl<<"Energy received at ith time slot:\n";
+    fout << "ANALYSIS OF THE OUTPUT GENERATED: " << endl;
+    fout << endl
+         << "Energy received at ith time slot:\n";
     fout << endl;
-    for(auto i:energy_at_t){
-        fout<<i<<" ";
+    for (auto i : energy_at_t)
+    {
+        fout << i << " ";
     }
-    fout<<endl;
-
-    fout<<endl<<"Energy received at ith machine:\n";
     fout << endl;
-    for(auto i:energy_at_m){
-        fout<<i<<" ";
-    }
-    fout<<endl;
 
-    int total_tasks=0;
+    fout << endl
+         << "Energy received at ith machine:\n";
+    fout << endl;
+    for (auto i : energy_at_m)
+    {
+        fout << i << " ";
+    }
+    fout << endl;
+
+    int total_tasks = 0;
     vector<int> tasks_at_t(T);
     vector<int> tasks_at_m(N);
-    for(int t=0; t<T; t++){
-        for(int m=0; m<N; m++){
-            total_tasks+=D[m][t];
-            tasks_at_t[t]+=D[m][t];
-            tasks_at_m[m]+=D[m][t];
+    for (int t = 0; t < T; t++)
+    {
+        for (int m = 0; m < N; m++)
+        {
+            total_tasks += D[m][t];
+            tasks_at_t[t] += D[m][t];
+            tasks_at_m[m] += D[m][t];
         }
     }
 
-    fout<<endl<<"Tasks scheduled at ith time slot:\n";
+    fout << endl
+         << "Tasks scheduled at ith time slot:\n";
     fout << endl;
-    for(auto i:tasks_at_t){
-        fout<<i<<" ";
+    for (auto i : tasks_at_t)
+    {
+        fout << i << " ";
     }
-    fout<<endl;
-
-    fout<<endl<<"Tasks scheduled at ith machine:\n";
     fout << endl;
-    for(auto i:tasks_at_m){
-        fout<<i<<" ";
-    }
-    fout<<endl;
-    int total_tasks_scheduled=0;
 
-    for(int m=0; m<N; m++){
-        for(int t=0; t<T; t++){
-            total_tasks_scheduled+=D_Sched[m][t];
+    fout << endl
+         << "Tasks scheduled at ith machine:\n";
+    fout << endl;
+    for (auto i : tasks_at_m)
+    {
+        fout << i << " ";
+    }
+    fout << endl;
+    int total_tasks_scheduled = 0;
+
+    for (int m = 0; m < N; m++)
+    {
+        for (int t = 0; t < T; t++)
+        {
+            total_tasks_scheduled += D_Sched[m][t];
         }
     }
     fout << endl;
-    fout<<"Total tasks receieved: "<<total_tasks<<endl;
-    fout<<"Total tasks completed: "<<total_tasks_scheduled<<endl;
-    cout<<"Task Scheduling is complete, see output.txt for the output"<<endl;
+    fout << "Total tasks receieved: " << total_tasks << endl;
+    fout << "Total tasks completed: " << total_tasks_scheduled << endl;
+    cout << "Task Scheduling is complete, see output.txt for the output" << endl;
 }
